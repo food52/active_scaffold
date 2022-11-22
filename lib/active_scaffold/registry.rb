@@ -6,15 +6,15 @@ module ActiveScaffold
       @user_settings ||= {}
     end
 
-    def constraint_columns
+    def self.constraint_columns
       @constraint_columns ||= Hash.new { |h, k| h[k] = [] }
     end
 
-    def unauthorized_columns
+    def self.unauthorized_columns
       @unauthorized_columns ||= Hash.new { |h, k| h[k] = [] }
     end
 
-    def cache(kind, key = nil, &block)
+    def self.cache(kind, key = nil, &block)
       unless key
         key = kind
         kind = :cache
