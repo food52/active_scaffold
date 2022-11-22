@@ -24,9 +24,5 @@ module ActiveScaffold
       return cache[key] if cache.include? key
       cache[key] ||= yield
     end
-
-    def self.instance
-      RequestStore.store[@per_thread_registry_key] ||= new
-    end
   end
 end
