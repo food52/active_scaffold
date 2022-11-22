@@ -1,7 +1,7 @@
 module ActiveScaffold
   class Registry
     extend ActiveSupport::PerThreadRegistry
-    attr_accessor :current_user_proc, :current_ability_proc, :marked_records
+    thread_mattr_accessor :current_user_proc, :current_ability_proc, :marked_records
 
     def user_settings
       @user_settings ||= {}
